@@ -1,8 +1,10 @@
 chrome.runtime.onMessage.addListener (
     function(request, sender, sendResponse) {
         if(request.message === "PoEFilter-Activated") {
-            var characterName = document.querySelector(".character-name").innerHTML;
-            console.log(characterName);
+            var characterNames = document.querySelectorAll(".character-name");
+            for (var i = 0; i < characterNames.length; i++) {
+                console.log(characterNames[i].innerHTML);
+            }
         }
     }
 );
